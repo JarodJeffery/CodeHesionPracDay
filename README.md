@@ -28,3 +28,8 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+I have finished most of task one and all of 2 i still need to get it so that you can create new yesers with a valid access token
+
+tash 3 is partially completed sorr that this was alll i was able to do 
