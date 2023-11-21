@@ -1,0 +1,82 @@
+#regH1{
+    font-size: 4em;
+    line-height: 1.1;
+    color: #a49eca;
+    text-align: center;
+    transition: 1s;
+    -webkit-box-reflect: below 2px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.regForm{
+    max-width: 400px;
+    max-height: 600px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 470px;
+    min-width: 400px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #3b2d83, #1c1151);
+    box-shadow:  31px 31px 33px hsl(250, 55%, 10%),
+                -31px -31px 33px #4330a5;
+}
+
+form{
+    text-align: center;
+    
+    color: rgb(188, 163, 163);
+}
+  
+label{
+    display: block;
+    text-align: left;
+    width: 90%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color: #989ce6;
+    font-size: large;
+    padding-left: 5px;
+    margin-left: 15px;
+    margin-right: auto;
+} 
+  
+input {
+    display: block;
+    width: 90%;
+    min-height: 30px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+  
+#regBtn {
+    font-size: large;
+    display: block;
+    width: 70%;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+    min-height: 40px;
+    color: azure;
+    background: linear-gradient(145deg, #1a1147, #42338e);
+    transition: 1s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 2px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+#regBtn:hover {
+    background: rgb(2,29,78);
+    background: linear-gradient(-145deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+}

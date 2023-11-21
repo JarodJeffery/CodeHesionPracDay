@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from 'react-router';
 import { useState } from 'react';
 import WordList from './WordList';
-
+import './Word.css';
 const Words = ({token}) => {
     const [allbooks, setBooks] = useState();
 
@@ -37,7 +37,7 @@ const Words = ({token}) => {
     return(
         <>
             {allbooks ? <WordList books={allbooks} id={id}/>: <p>No content</p>}
-            <button onClick={goToHome}>Home</button>
+            <button id="backBtn" onClick={goToHome}>Home</button>
         </>
     );
 };

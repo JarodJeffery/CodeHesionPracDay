@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
+import "./Login.css";
 
 function LoginForm({ gettingDetails }) {
   return(
@@ -27,13 +28,13 @@ function LoginForm({ gettingDetails }) {
         }}>
           {({values,errors,touched,handleChange,handleBlur,handleSubmit,isSubmitting,}) => (
          <form onSubmit={handleSubmit}>
-            <label>Email </label>
-            <input type="email" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} placeholder='admin@codehesion.co.za'/>
+            <label id="loginLable" >Email </label>
+            <input type="email" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} placeholder='email@hotmail.co.za'/>
             {errors.email && touched.email && errors.email}
-            <label>Password </label>
-            <input type="password" name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} placeholder='P@ssword1'/>
+            <label id="loginLable">Password </label>
+            <input type="password" name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} placeholder='1234'/>
             {errors.password && touched.password && errors.password}
-            <button type="submit" disabled={isSubmitting}>Submit</button>
+            <button id="loginBtn" type="submit" disabled={isSubmitting}>Submit</button>
          </form>
        )}
      </Formik>

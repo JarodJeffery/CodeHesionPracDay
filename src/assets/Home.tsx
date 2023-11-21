@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
 let data = {
     'grant_type': 'password',
@@ -26,8 +27,8 @@ const Home = (token) => {
     const navigate =useNavigate();
     if(token.token.accessT == null){
         return <>
-        <p>Login first</p>
-        <button onClick={goToLogin}>Login</button>
+        <p id ="NoAccess">Login first</p>
+        <button id="homeBtn" onClick={goToLogin}>Login</button>
         </>;
     }
 
@@ -60,14 +61,15 @@ const Home = (token) => {
 
     return(
         <div>
-            <ol >
+            <h1 id="CatH1">Catagories</h1>
+            <ol className="categories">
                 {content != null && content.data.map((item)=>{
                     return (<li key={item.id}>
-                        <Link to={`/Words/${item.id}`}>{item.name}</Link>
+                        <Link to={`/Words/${item.id}`} className="Links">{item.name}</Link>
                     </li>);
                 })}
             </ol>
-            <button onClick={goToReg}>Register new User</button>
+            <button id="homeBtn" onClick={goToReg}>Register new User</button>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import LoginForm from './LoginComponents/LoginForm.tsx';
 import {useNavigate } from 'react-router-dom';
 import axios from "axios";
+import './LoginComponents/Login.css';
 
 let data = {
     'grant_type': 'password',
@@ -47,7 +48,7 @@ const LoginPage = ({ updateToken }) => {
     }
     
     return (
-        <div className='app'>
+        <div className='Forms'>
             <LoginForm gettingDetails={getToken} />
         </div>
     );

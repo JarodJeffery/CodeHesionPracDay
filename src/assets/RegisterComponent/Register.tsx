@@ -1,9 +1,10 @@
 import { Formik } from 'formik';
+import '../Register.css';
 
 function Register({ addNew }) {
   return(
     <div>
-      <h1>Register</h1>
+      <h1 id="regH1">Register</h1>
       <Formik
         initialValues={{email:'', name:'',surname:'',  role:''}}
         validate={values => {
@@ -32,13 +33,13 @@ function Register({ addNew }) {
             <label>Name</label>
             <input type="text" name="name" onChange={handleChange} onBlur={handleBlur} value={values.name}/>
             {errors.name && touched.name && errors.name}
-            <label>role</label>
+            <label>Role</label>
             <input type="text" name="role" onChange={handleChange} onBlur={handleBlur} value={values.role}/>
             {errors.role && touched.role && errors.role}
-            <label>surname</label>
+            <label>Surname</label>
             <input type="text" name="surname" onChange={handleChange} onBlur={handleBlur} value={values.surname}/>
             {errors.surname && touched.surname && errors.surname}
-            <button type="submit" disabled={isSubmitting}>Submit</button>
+            <button id="regBtn" type="submit" disabled={isSubmitting}>Submit</button>
          </form>
        )}
      </Formik>

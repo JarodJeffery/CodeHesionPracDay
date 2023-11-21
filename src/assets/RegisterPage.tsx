@@ -1,6 +1,7 @@
 import Register from "./RegisterComponent/Register";
 import axios from "axios";
 import {useNavigate } from 'react-router-dom';
+import './Register.css';
 
 let data = {
     "name": "",
@@ -49,7 +50,7 @@ const RegisterPage =({ token }) =>{
     }
 
     return (
-        <div className='app'>
+        <div className='regForm'>
             <Register addNew={addNewUser} />
         </div>
     );

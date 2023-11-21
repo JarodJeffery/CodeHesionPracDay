@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #0e0244, #645fc5);
+    
+  }
+
+.Forms{
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 350px;
+    min-width: 350px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #3b2d83, #1c1151);
+    box-shadow:  40px 40px 40px hsl(0, 0%, 0%),
+                -40px -40px 40px #5c47c4;
+}
+
+.Forms h1{
+    font-size: 3em;
+    line-height: 1.1;
+    color: #a89ee8;
+    margin-bottom: 0px;
+    padding-top: 10%;
+}
+
+form{
+    text-align: center;
+    
+    color: rgb(118, 113, 189);
+}
+  
+#loginLable{
+    display: block;
+    text-align: left;
+    width: 90%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color: #9fa2e3;
+    font-size: large;
+    padding-left: 5px;
+    margin-left: 15px;
+    margin-right: auto;
+} 
+  
+input {
+    display: block;
+    width: 90%;
+    min-height: 30px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+  
+#loginBtn {
+    font-size: large;
+    display: block;
+    width: 90%;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+    min-height: 40px;
+    color: azure;
+    background: linear-gradient(145deg, #1a1147, #42338e);
+    transition: 1s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 2px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+#loginBtn:hover {
+    background: rgb(2,29,78);
+    background: linear-gradient(-145deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+}

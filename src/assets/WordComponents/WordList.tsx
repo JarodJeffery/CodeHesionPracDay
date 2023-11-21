@@ -1,8 +1,8 @@
+import './Word.css';
+
 export default function WordList({ books, id }){
-
-
     return(
-        <ol>
+        <ol className='wordsList'>
             {books.map((item) =>{
                 return (
                     item.categories.map((cat) =>{
