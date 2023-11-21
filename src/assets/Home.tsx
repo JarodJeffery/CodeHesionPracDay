@@ -40,6 +40,9 @@ const Home = (token) => {
         navigate('/reg');
     }
 
+    function goToUser(){
+        navigate('/user');
+    }
 
     const [content, updateContent] =  useState();
     if(!content){
@@ -50,7 +53,7 @@ const Home = (token) => {
             },
         })
         .then((users) =>{
-            console.log(users.data);
+            //console.log(users.data);
             updateContentData(users.data);
         }).catch((e) => console.log(e));
     }
@@ -70,6 +73,7 @@ const Home = (token) => {
                 })}
             </ol>
             <button id="homeBtn" onClick={goToReg}>Register new User</button>
+            <button id="updateUser" onClick={goToUser}>Update User Info</button>
         </div>
     );
 }

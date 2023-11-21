@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    color: azure;
+}
+
+p{
+    color: white;
+}
+
+.userForm{
+    max-width: 400px;
+    max-height: 600px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 470px;
+    min-width: 400px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #3b2d83, #1c1151);
+    box-shadow:  31px 31px 33px hsl(250, 55%, 10%),
+                -31px -31px 33px #4330a5;
+}

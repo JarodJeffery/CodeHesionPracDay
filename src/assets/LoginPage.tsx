@@ -27,8 +27,8 @@ const LoginPage = ({ updateToken }) => {
     const navigate =useNavigate();
     
     const getToken =async(value) =>{
-        data.username =value.email; //'admin@codehesion.co.za';
-        data.password = value.password; //'P@ssword1'; 
+        data.username ="admin@codehesion.co.za"; //value.email
+        data.password = "P@ssword1"; //value.password
         axios.request(config)
         .then((response) => {
             //console.log(JSON.stringify(response.data.access_token));
@@ -42,7 +42,7 @@ const LoginPage = ({ updateToken }) => {
     }
 
     function setTokenHere(response){
-        console.log(JSON.stringify(response.data));
+        //console.log(JSON.stringify(response.data));
         updateToken(response.data.access_token, data.username, data.password);
         navigate('/home');
     }
