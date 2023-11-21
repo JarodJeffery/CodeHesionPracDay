@@ -12,12 +12,12 @@ export default function WordList({ books, id }){
                                 {cat.id == id &&
                                     <li key={item.name}>
                                         <h1>{item.name}</h1>
-                                        <p>{item.published}</p>
-                                        <p>{item.description}</p>
+                                        <p>Published: {item.published ? 'Yes': 'No'}</p>
+                                        <p>Description: {item.description ===null ? 'Cannot find ' : item.description}</p>
                                         {item.categories.map((cate) =>{
                                             return(
                                                 <p>
-                                                    {cate.name}
+                                                    Category: {cate.name}
                                                 </p>
                                             );
                                         })}     
