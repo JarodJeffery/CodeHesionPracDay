@@ -4,7 +4,10 @@ import { useParams } from 'react-router';
 import { useState } from 'react';
 import WordList from './WordList';
 import './Word.css';
-const Words = ({token}) => {
+
+const Words = () => {
+    
+    let token = localStorage.getItem("accesT");
     const [allbooks, setBooks] = useState();
 
     const navigate =useNavigate();
@@ -14,7 +17,7 @@ const Words = ({token}) => {
         axios.get("https://edeaf-api-staging.azurewebsites.net/v1/admin/Words ",{
             headers: { 
                 "accept" : "application/json",
-                "Authorization" :"Bearer " + token.accessT, 
+                "Authorization" :"Bearer " + token, 
             },
         })
         .then((books) =>{

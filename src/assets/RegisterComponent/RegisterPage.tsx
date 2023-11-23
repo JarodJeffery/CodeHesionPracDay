@@ -1,8 +1,8 @@
-import Register from "./RegisterComponent/Register";
+import Register from "./Register";
 import axios from "axios";
 import {useNavigate } from 'react-router-dom';
 import './Register.css';
-
+import { ACCESS_TOKEN } from "../../Data";
 let data = {
     "name": "",
     "surname": "",
@@ -12,10 +12,12 @@ let data = {
 //
 
 
-const RegisterPage =({ token }) =>{
+const RegisterPage =() =>{
+    ACCESS_TOKEN.token = localStorage.getItem("accesT");
+    let token = ACCESS_TOKEN.token;
     const navigate =useNavigate();
     
-    if(token.accessT == null){
+    if(token == null){
         return <>
         <p>Login first</p>
         <button onClick={goToLogin}>Login</button>
@@ -28,7 +30,7 @@ const RegisterPage =({ token }) =>{
 
     const config = {
         headers: {
-            "Authorization" :"Bearer " + token.accessT,
+            "Authorization" :"Bearer " + token,
             'Content-Type': 'application/json'
         }
     };

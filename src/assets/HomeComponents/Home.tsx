@@ -3,29 +3,17 @@ import { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import { DATA} from "../../Data";
 
-let data = {
-    'grant_type': 'password',
-    'client_id': 'web-dashboard',
-    'client_secret': 'SuperSecretPassword',
-    'scope': 'openid profile role email offline_access adminApi mobileApi',
-    'username': '',
-    'password': '' 
-};
 
-let config = {
-    method: 'post',
+let data = DATA;
 
-    url: 'https://edeaf-api-staging.azurewebsites.net/connect/token',
-    headers: { 
-        'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    data : data
-};
+const Home = () => {
 
-const Home = (token) => {
+    let token = localStorage.getItem("accesT");
+    console.log();
     const navigate =useNavigate();
-    if(token.token.accessT == null){
+    if(token.token === null){
         return <>
         <p id ="NoAccess">Login first</p>
         <button id="homeBtn" onClick={goToLogin}>Login</button>
@@ -49,7 +37,7 @@ const Home = (token) => {
         axios.get("https://edeaf-api-staging.azurewebsites.net/v1/admin/Categories ",{
             headers: { 
                 "accept" : "application/json",
-                "Authorization" :"Bearer " + token.token.accessT, 
+                "Authorization" :"Bearer " + token, 
             },
         })
         .then((users) =>{
@@ -74,6 +62,7 @@ const Home = (token) => {
             </ol>
             <button id="homeBtn" onClick={goToReg}>Register new User</button>
             <button id="updateUser" onClick={goToUser}>Update User Info</button>
+            <button id="tagsBtn" onClick={() => navigate('/tags')}>Tags Info</button>
         </div>
     );
 }

@@ -1,20 +1,12 @@
-import LoginForm from './LoginComponents/LoginForm.tsx';
+import LoginForm from './LoginForm.tsx';
 import {useNavigate } from 'react-router-dom';
 import axios from "axios";
-import './LoginComponents/Login.css';
+import './Login.css';
+import { DATA } from '../../Data.tsx';
 
-let data = {
-    'grant_type': 'password',
-    'client_id': 'web-dashboard',
-    'client_secret': 'SuperSecretPassword',
-    'scope': 'openid profile role email offline_access adminApi mobileApi',
-    'username': '',
-    'password': '' 
-};
-//
+let data = DATA;
 let config = {
     method: 'post',
-
     url: 'https://edeaf-api-staging.azurewebsites.net/connect/token',
     headers: { 
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -27,11 +19,10 @@ const LoginPage = ({ updateToken }) => {
     const navigate =useNavigate();
     
     const getToken =async(value) =>{
-        data.username ="admin@codehesion.co.za"; //value.email
-        data.password = "P@ssword1"; //value.password
+        data.username = value.email; 
+        data.password = value.password;
         axios.request(config)
         .then((response) => {
-            //console.log(JSON.stringify(response.data.access_token));
             setTokenHere(response);
         })
         .catch((error) => {
@@ -42,8 +33,7 @@ const LoginPage = ({ updateToken }) => {
     }
 
     function setTokenHere(response){
-        //console.log(JSON.stringify(response.data));
-        updateToken(response.data.access_token, data.username, data.password);
+        updateToken(response.data.access_token);
         navigate('/home');
     }
     

@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import '../Register.css';
+import './Register.css';
 
 function Register({ addNew }) {
   return(

@@ -4,7 +4,10 @@ import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
 
-export default function UserDetail({ token }){
+export default function UserDetail(){ 
+
+    let token = localStorage.getItem("accesT");
+
     const navigate =useNavigate();
     const [currUser, setCurrUser] = useState({
         'id' : '',
@@ -16,12 +19,11 @@ export default function UserDetail({ token }){
 
     console.log('currUser ', currUser);
 
-    const t = token.accessT;
     if(currUser.id === ''){
         axios.get("https://edeaf-api-staging.azurewebsites.net/v1/admin/Users/current ",{
             headers: { 
                 "accept" : "application/json",
-                "Authorization" :"Bearer " + t, 
+                "Authorization" :"Bearer " + token, 
             },
         })
         .then((users) =>{
@@ -51,7 +53,7 @@ export default function UserDetail({ token }){
         navigate('/')
     }
 
-    if(t === null){
+    if(token === null){
         return (<>
             <p>Login first</p>
             <button id="homeBtn" onClick={goToLogin}>Login</button></>
@@ -72,7 +74,7 @@ export default function UserDetail({ token }){
             url: 'https://edeaf-api-staging.azurewebsites.net/v1/admin/Users/current',
             headers: { 
               'Content-Type': 'application/json', 
-              'Authorization': 'Bearer' + token.accessT,
+              'Authorization': 'Bearer' + token,
             },
             data : data
         };
@@ -89,6 +91,7 @@ export default function UserDetail({ token }){
     return (
         <>
             <UserForm updateUser={update} userInfo={currUser}/>
+            <button id="homeBtn" onClick={() =>navigate('/home')}>Home</button>
         </>
     );
 }
